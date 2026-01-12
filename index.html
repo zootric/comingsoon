@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #ffffff;
+        color: #111827;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .page {
+        width: 100%;
+        max-width: 960px;
+        padding: 24px;
+      }
+
+      .card {
+        border-radius: 24px;
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.04);
+        padding: 40px 28px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+        background: radial-gradient(circle at top left, #f9fafb 0, #ffffff 42%);
+      }
+
+      .logo-placeholder {
+        width: 80px;
+        height: 80px;
+        border-radius: 999px;
+        border: 2px dashed rgba(148, 163, 184, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #94a3b8;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        animation: float 3.6s ease-in-out infinite;
+      }
+
+      .logo-glow {
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(circle at 30% 0, rgba(59, 130, 246, 0.1), transparent 60%);
+        opacity: 0;
+        animation: glowPulse 4.2s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .title-group {
+        text-align: center;
+        max-width: 480px;
+      }
+
+      h1 {
+        font-size: clamp(2.1rem, 3vw, 2.7rem);
+        font-weight: 650;
+        letter-spacing: -0.04em;
+        margin-bottom: 10px;
+      }
+
+      .accent {
+        position: relative;
+        display: inline-block;
+      }
+
+      .accent::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, #2563eb, #f97316);
+        border-radius: 999px;
+        transform-origin: left;
+        transform: scaleX(0);
+        animation: underline 1.8s ease-out forwards 0.6s;
+      }
+
+      p {
+        font-size: 0.98rem;
+        line-height: 1.6;
+        color: #6b7280;
+      }
+
+      .meta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: #9ca3af;
+      }
+
+      .dots {
+        display: inline-flex;
+        gap: 5px;
+      }
+
+      .dots span {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: #111827;
+        opacity: 0.16;
+        animation: blink 1.4s infinite ease-in-out;
+      }
+
+      .dots span:nth-child(2) {
+        animation-delay: 0.18s;
+      }
+
+      .dots span:nth-child(3) {
+        animation-delay: 0.36s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+
+      @keyframes glowPulse {
+        0%,
+        100% {
+          opacity: 0;
+          transform: scale(0.96);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes underline {
+        0% {
+          transform: scaleX(0);
+        }
+        100% {
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes blink {
+        0%,
+        80%,
+        100% {
+          opacity: 0.16;
+          transform: translateY(0);
+        }
+        40% {
+          opacity: 0.9;
+          transform: translateY(-2px);
+        }
+      }
+
+      @media (min-width: 640px) {
+        .card {
+          padding: 54px 56px 40px;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .left,
+        .right {
+          flex: 1;
+        }
+
+        .left {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          align-items: flex-start;
+        }
+
+        .title-group {
+          text-align: left;
+        }
+
+        .meta {
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <main class="card">
+        <section class="left">
+          <div class="logo-placeholder">
+            <div class="logo-glow"></div>
+            <span>YOUR LOGO</span>
+          </div>
+
+          <div class="title-group">
+            <h1>
+              A clean, white
+              <span class="accent">coming&nbsp;soon</span>
+              page.
+            </h1>
+            <p>
+              We&rsquo;re carefully crafting something new. Drop your logo into
+              the circle above and you&rsquo;re ready to share this minimal
+              placeholder with the world.
+            </p>
+          </div>
+        </section>
+
+        <section class="right">
+          <div class="meta">
+            <span>COMING SOON</span>
+            <div class="dots" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+
