@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coming Soon</title>
+    <link rel="icon" type="image/png" href="ticonb.png" />
+    <title>Coming Soon &mdash; A Complete Brand Is Loading</title>
     <style>
       * {
         box-sizing: border-box;
@@ -14,7 +15,25 @@
       body {
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
           sans-serif;
-        background: #ffffff;
+        background: radial-gradient(circle at top left, #f9fafb 0, #ffffff 40%);
+        background-image: radial-gradient(
+            circle at 10% 20%,
+            rgba(129, 140, 248, 0.16),
+            transparent 52%
+          ),
+          radial-gradient(
+            circle at 80% 0%,
+            rgba(45, 212, 191, 0.16),
+            transparent 55%
+          ),
+          radial-gradient(
+            circle at 0% 100%,
+            rgba(244, 114, 182, 0.18),
+            transparent 45%
+          ),
+          radial-gradient(circle at 100% 100%, #ffffff, #f9fafb 52%);
+        background-size: 160% 160%;
+        animation: dreamyBackground 28s ease-in-out infinite alternate;
         color: #111827;
         min-height: 100vh;
         display: flex;
@@ -31,30 +50,37 @@
       .card {
         border-radius: 24px;
         border: 1px solid rgba(15, 23, 42, 0.06);
-        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.04);
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
         padding: 40px 28px 32px;
         display: flex;
         flex-direction: column;
         gap: 32px;
         align-items: center;
-        background: radial-gradient(circle at top left, #f9fafb 0, #ffffff 42%);
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(18px);
       }
 
       .logo-placeholder {
         width: 80px;
         height: 80px;
         border-radius: 999px;
-        border: 2px dashed rgba(148, 163, 184, 0.8);
+        border: 2px solid rgba(148, 163, 184, 0.4);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #94a3b8;
-        font-size: 11px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
         position: relative;
         overflow: hidden;
         animation: float 3.6s ease-in-out infinite;
+        padding: 6px;
+        background-color: #ffffff;
+      }
+
+      .logo-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: inherit;
+        z-index: 1;
       }
 
       .logo-glow {
@@ -181,6 +207,21 @@
         }
       }
 
+      @keyframes dreamyBackground {
+        0% {
+          background-position: 0% 0%;
+        }
+        33% {
+          background-position: 100% 0%;
+        }
+        66% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 0% 100%;
+        }
+      }
+
       @media (min-width: 640px) {
         .card {
           padding: 54px 56px 40px;
@@ -217,19 +258,20 @@
         <section class="left">
           <div class="logo-placeholder">
             <div class="logo-glow"></div>
-            <span>YOUR LOGO</span>
+            <img
+              src="ticonb.png"
+              alt="Company logo"
+              class="logo-image"
+            />
           </div>
 
           <div class="title-group">
             <h1>
-              A clean, white
-              <span class="accent">coming&nbsp;soon</span>
-              page.
+              <span class="accent">Coming&nbsp;soon</span>
             </h1>
             <p>
-              We&rsquo;re carefully crafting something new. Drop your logo into
-              the circle above and you&rsquo;re ready to share this minimal
-              placeholder with the world.
+              A complete brand experience is loading. Check back soon to see
+              the full story, visuals, and details come to life.
             </p>
           </div>
         </section>
